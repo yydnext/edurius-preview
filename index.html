@@ -4,34 +4,104 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Edurius Preview</title>
+  <meta name="description" content="Edurius — Guiding your college future. Product preview and prototypes." />
+  <meta property="og:title" content="Edurius Preview" />
+  <meta property="og:description" content="Guiding your college future. Product preview and prototypes." />
+  <meta property="og:image" content="/assets/screenshot.png" />
+  <meta name="theme-color" content="#0f2742" />
   <style>
-    :root { --bg:#0f2742; --card:#122b4a; --txt:#eaf2ff; --muted:#9fb6d4; --btn:#4ea3ff; }
-    body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,Segoe UI,Roboto,Arial}
-    .wrap{min-height:100svh;display:grid;place-items:center}
-    .card{background:var(--card);padding:36px 44px;border-radius:16px;max-width:560px;
-          box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    h1{margin:0 0 10px;font-size:32px}
-    p{margin:0 0 20px;color:var(--muted)}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    a.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;
-          font-weight:600;background:var(--btn);color:#002247}
-    a.link{color:#bcd7ff;text-decoration:underline}
-    footer{margin-top:18px;font-size:13px;color:#9fb6d4}
+    :root {
+      --bg:#0f2742; --card:#122b4a; --txt:#eaf2ff; --muted:#9fb6d4; --btn:#4ea3ff;
+      --stroke:rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--txt); font:16px/1.6 system-ui, Segoe UI, Roboto, Arial; }
+    .wrap { min-height:100svh; display:grid; place-items:center; padding:32px 16px; }
+    .card {
+      width:min(980px, 100%); background:var(--card); border-radius:18px; padding:28px;
+      box-shadow:0 18px 50px var(--stroke);
+    }
+    header {
+      display:flex; align-items:center; gap:16px; margin-bottom:8px;
+    }
+    header img.logo { width:44px; height:44px; border-radius:8px; object-fit:contain; }
+    header h1 { margin:0; font-size:28px; letter-spacing:.2px; }
+    .tagline { margin:2px 0 18px; color:var(--muted); }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 26px; }
+    a.btn {
+      display:inline-block; padding:12px 18px; border-radius:10px; text-decoration:none;
+      font-weight:600; background:var(--btn); color:#002247;
+      box-shadow:0 6px 16px rgba(0,0,0,.25);
+    }
+    a.btn.secondary { background:#244a73; color:#d6e6ff; }
+    .grid {
+      display:grid; grid-template-columns:420px 1fr; gap:24px; margin-top:8px;
+    }
+    .about {
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+      border-radius:14px; padding:16px 18px;
+    }
+    .about h3 { margin:2px 0 10px; font-size:18px; }
+    .about ul { margin:0; padding-left:18px; color:#cfe2ff; }
+    .shot {
+      background:rgba(0,0,0,.08); border:1px solid rgba(255,255,255,.07);
+      border-radius:14px; padding:10px; display:flex; align-items:center; justify-content:center;
+    }
+    .shot img { width:100%; height:auto; border-radius:10px; display:block; }
+    footer {
+      margin-top:18px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08);
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; color:var(--muted);
+      font-size:14px;
+    }
+    footer a { color:#bcd7ff; }
+    @media (max-width:900px) { .grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
-      <h1>Edurius Preview</h1>
-      <p>This page is served by <strong>GitHub Pages</strong>.</p>
+      <header>
+        <img class="logo" src="/assets/logo.png" alt="Edurius logo" />
+        <div>
+          <h1>Edurius Preview</h1>
+          <div class="tagline">Guiding your college future — product preview & prototypes</div>
+        </div>
+      </header>
 
-      <div class="actions">
+      <div class="cta">
         <a class="btn" href="/app">Go to App (Landing)</a>
-        <a class="btn" href="/lofi">Open Lofi Prototype</a>
+        <a class="btn secondary" href="/lofi">Open Lofi Prototype</a>
+        <a class="btn secondary" href="mailto:ops@edurius.com">Contact ops</a>
+      </div>
+
+      <div class="grid">
+        <div class="about">
+          <h3>What is Edurius?</h3>
+          <p>
+            Edurius helps families navigate U.S. college admissions and financial planning with
+            clear forms, guidance, and timely notifications.
+          </p>
+          <ul>
+            <li>Intake → review → personalized guidance</li>
+            <li>Weekly digest & notification templates (Postmark)</li>
+            <li>Dashboard prototypes and landing preview</li>
+          </ul>
+          <p style="margin-top:10px">
+            Support: <a href="mailto:ops@edurius.com">ops@edurius.com</a><br/>
+            Address: 150 Garret Way, Port Matilda, PA 16870
+          </p>
+        </div>
+
+        <div class="shot" aria-label="Product preview screenshot">
+          <img src="/assets/screenshot.png" alt="Edurius product preview" />
+        </div>
       </div>
 
       <footer>
-        Need help? <a class="link" href="mailto:ops@edurius.com">ops@edurius.com</a>
+        <div>© Edurius. All rights reserved.</div>
+        <div>
+          <a href="/app">App</a> · <a href="/lofi">Lofi</a> · <a href="mailto:ops@edurius.com">ops@edurius.com</a>
+        </div>
       </footer>
     </section>
   </main>
